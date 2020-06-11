@@ -401,7 +401,7 @@ def lda(hash_df, again=True,scoring=False):
      input_data=pd.read_csv(config["DataURL"],keep_default_na=False,encoding='latin-1')  
      dataframe= input_data
 	 
-	 assert input_data," could not open input file "
+     assert input_data," could not open input file "
 	 
      dataframe['text']=dataframe['Section_Text']
      """datafram_1=data_process(dataframe)
@@ -429,16 +429,10 @@ def lda(hash_df, again=True,scoring=False):
        
              strs=re.split(r'\.\s*',string)
              w=0
-			 i=0
+	     i=0
+		
              for str_ in strs:
-             """print(str_)
-         
-        
-             str_=str_+str_match.groups()[0]
-             w=w+1
-             """
                  str_=str_.replace('USC',usc)
-         
                  nlp_doc=nlp(str_)
                  pos_dict={}
                  str_pos=''
@@ -459,7 +453,7 @@ def lda(hash_df, again=True,scoring=False):
              df=pd.DataFrame(pos_l,columns= ['Cite','text','Text with POS'])
              df.to_csv('POStoCite _all '+str(random.randint(0,i))+'.csv')
      
-	 datafram_1=data_process(df)
+     datafram_1=data_process(df)
      lda(datafram_1)
   
      simil_df={}
