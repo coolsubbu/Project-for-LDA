@@ -1,0 +1,31 @@
+
+
+
+HI ALL,
+
+REPORT :
+
+Task A: POS TAGGING   :      Program to obtain POS Tags of Sentences in Corpus:
+       
+      The corpus has many citations and they are concerned with citations and each citation is a multi sentence text.   
+       
+       First : separate the para into list of sentences using regular expression and encoding .
+                 1. IF we divide the paragraphs into sentences using full stop as the separator then abbrv such "u.s.c" will give issues.  
+                     So to avoid this all "u,s.c" / "i.r.s"   are replaced with a word "USC" and then divided into  sentences which follows reconverting USC to 'u.s.c'
+       Secondly,   Do POS tagging using spacy library tagger  on individual sentences. 
+
+ Task B : Semantic matching of sentences :
+       
+      The sentences obtained from Task A will now converted to an nlp object of spacy library and 
+        Spacy semantic score is obtained via a word embedding from both sentences being compared.
+       We take 5 sentences and compare them with around 6k sentences from around 5k citations.
+
+Task C:  LDA for Topic Modelling :
+
+     I. We proprocess individual sentences with following steps:
+             a. stop word removal 
+             b. Lemmatization 
+             c cleaning special chars 
+     II  we provide corpus to LDA with 60 TOPICS and 2000.iterations.
+          a. We obtain the Topic description file which has algebraic expansion of topics 
+          b. We obtain the Topic Mapping file with following columns.				
